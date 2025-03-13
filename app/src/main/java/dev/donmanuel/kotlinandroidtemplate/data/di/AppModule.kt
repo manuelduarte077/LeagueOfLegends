@@ -22,20 +22,21 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideHttpClient(): HttpClient = HttpClient(OkHttp.create()) {
-        defaultRequest {
-            url(ApiRepositoryImpl.baseUrl)
-            header(HttpHeaders.ContentType, "application/json")
-        }
+    fun provideHttpClient(): HttpClient =
+        HttpClient(OkHttp.create()) {
+            defaultRequest {
+                url(ApiRepositoryImpl.baseUrl)
+                header(HttpHeaders.ContentType, "application/json")
+            }
 
-        install(ContentNegotiation) {
-            json(
-                Json {
-                    ignoreUnknownKeys = true
-                }
-            )
+            install(ContentNegotiation) {
+                json(
+                    Json {
+                        ignoreUnknownKeys = true
+                    }
+                )
+            }
         }
-    }
 
     @Provides
     @Singleton
