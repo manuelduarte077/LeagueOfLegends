@@ -4,16 +4,20 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.sp
+import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_details.ChampionDetailsScreen
+import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_details.ChampionDetailsViewModel
+import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list.ChampionListScreen
+import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list.ChampionListViewModel
 import dev.donmanuel.kotlinandroidtemplate.ui.theme.KotlinAndroidTemplateTheme
+import dev.donmanuel.kotlinandroidtemplate.ui.util.ChampionDetails
+import dev.donmanuel.kotlinandroidtemplate.ui.util.ChampionList
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -22,16 +26,30 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             KotlinAndroidTemplateTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Text(
-                        textAlign = TextAlign.Center,
-                        text = "Base Application",
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .padding(innerPadding)
-                            .fillMaxSize()
-                    )
+                val navController = rememberNavController()
+
+                NavHost(navController = navController, startDestination = ChampionList) {
+
+                    composable<ChampionList> {
+                        val viewModel = hiltViewModel<ChampionListViewModel>()
+                        val state by viewModel.state.collectAsStateWithLifecycle()
+
+                        ChampionListScreen(
+                            state = state,
+                            onValueChange = viewModel::onSearchTextChange,
+                            navigate = { name ->
+                                navController.navigate(ChampionDetails(name))
+                            }
+                        )
+                    }
+
+                    composable<ChampionDetails> {
+                        val viewModel = hiltViewModel<ChampionDetailsViewModel>()
+
+                        viewModel.champion.value?.let {
+                            ChampionDetailsScreen(champion = it)
+                        }
+                    }
                 }
             }
         }
