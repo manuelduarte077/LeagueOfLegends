@@ -1,4 +1,4 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_details.composable
+package dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_details.composable
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ListItem

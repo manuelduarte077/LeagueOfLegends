@@ -1,4 +1,4 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.theme
+package dev.donmanuel.kotlinandroidtemplate.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

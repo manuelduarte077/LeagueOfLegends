@@ -1,4 +1,4 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.util
+package dev.donmanuel.kotlinandroidtemplate.presentation.util
 
 import kotlinx.serialization.Serializable
 

@@ -11,13 +11,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_details.ChampionDetailsScreen
-import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_details.ChampionDetailsViewModel
-import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list.ChampionListScreen
-import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list.ChampionListViewModel
-import dev.donmanuel.kotlinandroidtemplate.ui.theme.KotlinAndroidTemplateTheme
-import dev.donmanuel.kotlinandroidtemplate.ui.util.ChampionDetails
-import dev.donmanuel.kotlinandroidtemplate.ui.util.ChampionList
+import dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_details.ChampionDetailsScreen
+import dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_details.ChampionDetailsViewModel
+import dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_list.ChampionListScreen
+import dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_list.ChampionListViewModel
+import dev.donmanuel.kotlinandroidtemplate.presentation.theme.KotlinAndroidTemplateTheme
+import dev.donmanuel.kotlinandroidtemplate.presentation.util.ChampionDetails
+import dev.donmanuel.kotlinandroidtemplate.presentation.util.ChampionList
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

@@ -1,10 +1,9 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_details.composable
+package dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_details.composable
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

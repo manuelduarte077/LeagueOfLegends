@@ -1,4 +1,4 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_details
+package dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_details
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
@@ -12,7 +12,7 @@ import com.skydoves.sandwich.onSuccess
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.donmanuel.kotlinandroidtemplate.domain.model.ChampionModel
 import dev.donmanuel.kotlinandroidtemplate.domain.repository.ApiRepository
-import dev.donmanuel.kotlinandroidtemplate.ui.util.ChampionDetails
+import dev.donmanuel.kotlinandroidtemplate.presentation.util.ChampionDetails
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list
+package dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,7 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list.composable.ChampionCard
+import dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_list.composable.ChampionCard
 
 
 @OptIn(ExperimentalMaterial3Api::class)

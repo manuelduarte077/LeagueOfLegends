@@ -1,4 +1,4 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list.composable
+package dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_list.composable
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

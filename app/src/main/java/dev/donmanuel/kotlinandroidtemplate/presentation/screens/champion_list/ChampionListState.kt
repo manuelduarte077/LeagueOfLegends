@@ -1,4 +1,4 @@
-package dev.donmanuel.kotlinandroidtemplate.ui.screens.champion_list
+package dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_list
 
 import dev.donmanuel.kotlinandroidtemplate.domain.model.ChampionModel
 
