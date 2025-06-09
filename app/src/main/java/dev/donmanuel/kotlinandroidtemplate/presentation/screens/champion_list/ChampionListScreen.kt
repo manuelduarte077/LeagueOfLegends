@@ -37,7 +37,12 @@ fun ChampionListScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("League Of Legends") },
+                title = {
+                    Text(
+                        "League Of Legends",
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                },
                 colors = topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = Color.White

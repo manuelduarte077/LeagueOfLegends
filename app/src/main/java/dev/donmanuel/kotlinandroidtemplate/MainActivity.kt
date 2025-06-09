@@ -47,7 +47,10 @@ class MainActivity : ComponentActivity() {
                         val viewModel = hiltViewModel<ChampionDetailsViewModel>()
 
                         viewModel.champion.value?.let {
-                            ChampionDetailsScreen(champion = it)
+                            ChampionDetailsScreen(
+                                champion = it,
+                                navController = navController
+                            )
                         }
                     }
                 }

@@ -57,6 +57,12 @@ fun ChampionCard(
                 style = MaterialTheme.typography.bodyMedium,
                 lineHeight = 24.sp
             )
+
+            Text(
+                text = champion.tags.joinToString(", "),
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }

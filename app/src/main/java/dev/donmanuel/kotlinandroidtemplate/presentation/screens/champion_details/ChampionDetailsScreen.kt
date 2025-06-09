@@ -17,7 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import dev.donmanuel.kotlinandroidtemplate.data.repository.ApiRepositoryImpl
 import dev.donmanuel.kotlinandroidtemplate.domain.model.ChampionModel
@@ -29,9 +29,9 @@ import dev.donmanuel.kotlinandroidtemplate.presentation.screens.champion_details
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChampionDetailsScreen(
-    champion: ChampionModel
+    champion: ChampionModel,
+    navController: NavController
 ) {
-    val navController = rememberNavController()
 
     Scaffold(
         topBar = {
@@ -39,6 +39,7 @@ fun ChampionDetailsScreen(
                 title = { Text("Back") },
                 navigationIcon = {
                     IconButton(onClick = {
+                        navController.popBackStack()
                     }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, "backIcon")
                     }

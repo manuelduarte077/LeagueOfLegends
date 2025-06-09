@@ -8,20 +8,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import dev.donmanuel.kotlinandroidtemplate.data.repository.ApiRepositoryImpl
 import dev.donmanuel.kotlinandroidtemplate.domain.model.SpellModel
 
-
 @Composable
 fun ChampionSpell(spell: SpellModel, modifier: Modifier = Modifier) {
     ListItem(
         headlineContent = {
-            Text(text = spell.name ?: "")
+            Text(
+                text = spell.name ?: "",
+                fontWeight = FontWeight.Bold
+            )
         },
         supportingContent = {
-            Text(text = spell.description ?: "")
+            Text(
+                text = spell.description ?: "",
+                fontWeight = FontWeight.Light,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
+            )
         },
         leadingContent = {
             AsyncImage(
